@@ -22,5 +22,9 @@ test = pd.get_dummies(test)
 #다른 게 존재할 경우 train과 test를 하나로 합쳐 원핫인코딩 실행
 combined = pd.concat([train,test])
 combined_dummies = pd.get_dummies(combined)
+
+n_train = len(train)
+train = combined_dummies[:n_train]
+test = combined_dummies[n_train:]
 ```
 
